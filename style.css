@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eaf4ff;
+    color: #1f2937;
+}
+
+header {
+    background: #6cb8f6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    padding: 30px;
+}
+
+.tense {
+    background: white;
+    max-width: 900px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 16px;
+}
+
+h2 {
+    color: #2563eb;
+}
+
+h3 {
+    margin-top: 35px;
+}
+
+.intro {
+    font-size: 17px;
+}
+
+.note {
+    background: #f0f7ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.examples {
+    background: #f8fbff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.formula {
+    background: #f0f7ff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.errors {
+    background: #f8fbff;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.markers li {
+    display: inline-block;
+    background: #e0f0ff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin: 4px;
+}
+
+.task {
+    background: #f0f7ff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+button {
+    background: #6cb8f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 7px 14px;
+    margin: 6px 6px 6px 0;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.result {
+    font-weight: bold;
+    margin-top: 10px;
+}
