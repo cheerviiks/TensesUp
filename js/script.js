@@ -11,10 +11,10 @@ function check(button, correct) {
     }
     
     if (correct) {
-        result.textContent = '✅ Верно!';
+        result.textContent = ' Верно!';
         result.style.color = 'green';
     } else {
-        result.textContent = '❌ Неверно';
+        result.textContent = ' Неверно :(';
         result.style.color = 'red';
     }
 }
@@ -70,10 +70,10 @@ function checkSentence(btn) {
     const userAnswer = sentence.textContent.trim();
 
     if (userAnswer === correct) {
-        result.textContent = "✔ Верно!";
+        result.textContent = "Верно!";
         result.style.color = "green";
     } else {
-        result.textContent = "✖ Неверно";
+        result.textContent = "Неверно :(";
         result.style.color = "red";
     }
 }
@@ -97,38 +97,35 @@ function addWord(button) {
     sentence.classList.add("active");
 }
 
+function checkInputs(exerciseId) {
+    const exercise = document.getElementById(exerciseId);
+    const inputs = exercise.querySelectorAll("input");
 
-// Специальная проверка для Present Continuous
-function checkSpecialSentence() {
-    console.log('checkSpecialSentence вызвана');
-    const sentence = document.getElementById("sentence");
-    const result = document.getElementById("sentenceResult");
-    
-    if (!sentence || !result) {
-        console.error('Не найден #sentence или #sentenceResult');
-        return;
-    }
-    
-    const userAnswer = sentence.textContent.trim();
-    console.log('Проверка специального:', userAnswer);
-    
-    if (userAnswer === "She is watching TV") {
-        result.textContent = "✅ Верно!";
-        result.style.color = "green";
-    } else {
-        result.textContent = "❌ Неверно";
-        result.style.color = "red";
-    }
+    inputs.forEach(input => {
+        const userAnswer = input.value.trim().toLowerCase();
+        const correctAnswer = input.dataset.answer.toLowerCase();
+
+        if (userAnswer === correctAnswer) {
+            input.classList.add("correct");
+            input.classList.remove("wrong");
+        } else {
+            input.classList.add("wrong");
+            input.classList.remove("correct");
+        }
+    });
 }
 
-// Очистить предложение
-function clearSentence() {
-    console.log('clearSentence вызвана');
-    const sentence = document.getElementById("sentence");
-    if (sentence) {
-        sentence.textContent = '';
-    }
+function clearInputs(exerciseId) {
+    const exercise = document.getElementById(exerciseId);
+    const inputs = exercise.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        input.value = "";
+        input.classList.remove("correct", "wrong");
+    });
 }
+
+
 
 // ========== НАВИГАЦИЯ ==========
 
@@ -183,7 +180,7 @@ async function loadTense(tenseName) {
         console.error('Ошибка загрузки времени:', error);
         document.getElementById('tense-container').innerHTML = `
             <div style="text-align:center; padding:40px; color:red;">
-                <h3>❌ Ошибка загрузки</h3>
+                <h3> Ошибка загрузки</h3>
                 <p>${error.message}</p>
                 <button onclick="goHome()" style="margin-top:20px;">Вернуться</button>
             </div>
