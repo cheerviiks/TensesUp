@@ -14,7 +14,6 @@
     </header>
     
     <div class="container">
-        <!-- Меню выбора времени -->
         <nav class="levels" id="levels-menu">
             <h2>Выбери уровень</h2>
             <div class="level">
@@ -26,51 +25,50 @@
             </div>
             <div class="level">
                 <h3>Средний уровень</h3>
-                <button disabled>Present Perfect</button>
-                <button disabled>Past Continuous</button>
-                <button disabled>Future Continuous</button>
+                <button id="btn-present-perfect" class="level-btn">Present Perfect</button>
+                <button id="btn-past-perfect">Past Perfect</button>
+                <button id="btn-past-continuous">Past Continuous</button>
+                <button id="btn-future-perfect">Future Perfect</button>
             </div>
             <div class="level">
-                <h3>Контроль</h3>
-                <button disabled>Итоговый тест</button>
-                <button disabled>Смешанные времена</button>
+                <h3>Сложный уровень</h3>
+                <button id="btn-present-perfect-continuous">Present Perfect Continuous</button>
+                <button id="btn-past-perfect-continuous">Past Perfect Continuous</button>
+                <button id="btn-future-perfect-continuous">Future Perfect Continuous</button>
+                <button id="btn-future-continuous">Future Continuous</button>
+                
             </div>
         </nav>
         
-        <!-- Сюда загружается выбранное время -->
         <div id="tense-container"></div>
     </div>
     
-    <!-- Подключаем JS -->
     <script src="js/script.js"></script>
     
-    <!-- Дополнительная проверка и инициализация -->
     <script>
-    // Проверка что все загрузилось
     document.addEventListener('DOMContentLoaded', function() {
         console.log('=== ДОПОЛНИТЕЛЬНАЯ ПРОВЕРКА ===');
         
         // Проверяем что функции доступны
         if (typeof toggleExercise === 'undefined') {
-            console.error('❌ ОШИБКА: toggleExercise не определена!');
+            console.error(' ОШИБКА: toggleExercise не определена!');
             alert('Ошибка: функции JavaScript не загрузились. Проверьте файл js/script.js');
         } else {
-            console.log('✅ toggleExercise доступна');
+            console.log(' toggleExercise доступна');
         }
         
         if (typeof check === 'undefined') {
-            console.error('❌ ОШИБКА: check не определена!');
+            console.error(' ОШИБКА: check не определена!');
         } else {
-            console.log('✅ check доступна');
+            console.log(' check доступна');
         }
         
         if (typeof loadTense === 'undefined') {
-            console.error('❌ ОШИБКА: loadTense не определена!');
+            console.error(' ОШИБКА: loadTense не определена!');
         } else {
-            console.log('✅ loadTense доступна');
+            console.log(' loadTense доступна');
         }
         
-        // Дублируем назначение кнопок на всякий случай
         const buttons = {
             'btn-present-simple': 'present-simple',
             'btn-present-continuous': 'present-continuous',
@@ -81,10 +79,8 @@
         for (const [btnId, tenseName] of Object.entries(buttons)) {
             const btn = document.getElementById(btnId);
             if (btn) {
-                // Удаляем старые обработчики
                 btn.replaceWith(btn.cloneNode(true));
                 
-                // Назначаем новый обработчик
                 const newBtn = document.getElementById(btnId);
                 newBtn.addEventListener('click', function() {
                     console.log('Кнопка нажата через доп. скрипт:', tenseName);
@@ -95,7 +91,7 @@
                         alert('Ошибка загрузки. Перезагрузите страницу.');
                     }
                 });
-                console.log('✅ Кнопка назначена:', btnId);
+                console.log(' Кнопка назначена:', btnId);
             }
         }
         

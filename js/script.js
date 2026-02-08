@@ -208,10 +208,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Назначаем обработчики кнопок навигации
     const btnIds = [
-        'btn-present-simple',
-        'btn-present-continuous', 
-        'btn-past-simple',
-        'btn-future-simple'
+'btn-present-simple',
+'btn-present-continuous',
+'btn-present-perfect',
+'btn-present-perfect-continuous',
+
+'btn-past-simple',
+'btn-past-continuous',
+'btn-past-perfect',
+'btn-past-perfect-continuous',
+
+'btn-future-simple',
+'btn-future-continuous',
+'btn-future-perfect',
+'btn-future-perfect-continuous',
+
     ];
     
     btnIds.forEach(id => {

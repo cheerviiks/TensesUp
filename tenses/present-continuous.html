@@ -1,78 +1,623 @@
 <div class="tense">
     <h2>Present Continuous</h2>
-    
-    <section class="theory">
-        <h3>Когда используется Present Continuous?</h3>
-        <ul>
-            <li>Действие происходит <b>прямо сейчас</b></li>
-            <li>Временное действие</li>
-            <li>Запланированное действие в ближайшем будущем</li>
-        </ul>
-        <h3>Как образуется?</h3>
-        <p><b>am / is / are + глагол + ing</b></p>
-        <p class="example"> I am reading now.<br> She is watching TV.<br> They are playing football. </p>
-        <h4>Слова-маркеры:</h4>
-        <p>now, at the moment, right now, today</p>
-    </section>
-    
-    <!-- Упражнение 1 -->
-    <button class="start-btn" onclick="toggleExercise('ex1')">Упражнение 1 — выбери правильную форму</button>
-    <div id="ex1" class="exercise">
-        <div class="task">
-            <p>1. She ___ (read) a book now.</p>
-            <button onclick="check(this,false)">reads</button>
-            <button onclick="check(this,true)">is reading</button>
-            <button onclick="check(this,false)">read</button>
-            <p class="result"></p>
-        </div>
-        <div class="task">
-            <p>2. They ___ (play) football at the moment.</p>
-            <button onclick="check(this,true)">are playing</button>
-            <button onclick="check(this,false)">play</button>
-            <button onclick="check(this,false)">plays</button>
-            <p class="result"></p>
-        </div>
-        <div class="task">
-            <p>3. I ___ (do) my homework now.</p>
-            <button onclick="check(this,false)">do</button>
-            <button onclick="check(this,true)">am doing</button>
-            <button onclick="check(this,false)">does</button>
-            <p class="result"></p>
-        </div>
+    <p class="intro">Present Continuous — это настоящее длительное время, которое мы используем, когда говорим о действиях, происходящих прямо сейчас, в момент речи, или вокруг настоящего момента.</p>
+
+    <h3>Когда именно используется Present Continuous</h3>
+    <h4>1. Действия в момент речи</h4>
+    <p class="note">Действия, которые происходят прямо сейчас, в тот самый момент, когда мы о них говорим.</p>
+    <div class="examples">
+        <p>Look! It's raining.<em> — Смотри! Идёт дождь (прямо сейчас).</em></p>
+        <p>I'm reading a good book.<em> — Я читаю интересную книгу (в данный момент).</em></p>
+        <p>Shhh! The baby is sleeping.<em> — Тсс! Ребёнок спит (сейчас).</em></p>
     </div>
     
-    <!-- Упражнение 2 -->
-    <button class="start-btn" onclick="toggleExercise('ex2')">Упражнение 2 — составь предложение</button>
-    <div id="ex2" class="exercise">
-        <p>Собери предложение:</p>
-        <div class="words">
-            <span onclick="addWord(this)">is</span>
-            <span onclick="addWord(this)">She</span>
-            <span onclick="addWord(this)">watching</span>
-            <span onclick="addWord(this)">TV</span>
-        </div>
-        <div id="sentence" class="sentence-box"></div>
-        <button onclick="checkSpecialSentence()">Проверить</button>
-        <button onclick="clearSentence()">Стереть</button>
-        <p id="sentenceResult"></p>
+    <h4>2. Временные ситуации</h4>
+    <p class="note">Действия, которые происходят в настоящий период времени, но не обязательно в сам момент речи. Ситуации, которые носят временный характер.</p>
+    <div class="examples">
+        <p>I'm living with my parents this month.<em> — В этом месяце я живу с родителями (временно).</em></p>
+        <p>She's studying for her exams this week.<em> — На этой неделе она готовится к экзаменам.</em></p>
+        <p>He's working in London at the moment.<em> — В настоящее время он работает в Лондоне.</em></p>
     </div>
     
-    <!-- Упражнение 3 -->
-    <button class="start-btn" onclick="toggleExercise('ex3')">Упражнение 3 — Present Simple или Continuous?</button>
-    <div id="ex3" class="exercise">
-        <div class="task">
-            <p>1. Look! She ___ (dance).</p>
-            <input type="text" id="q1">
-        </div>
-        <div class="task">
-            <p>2. He usually ___ (go) to school by bus.</p>
-            <input type="text" id="q2">
-        </div>
-        <div class="task">
-            <p>3. We ___ (study) English now.</p>
-            <input type="text" id="q3">
-        </div>
-        <button onclick="alert('Эта функция в разработке')">Проверить</button>
-        <p id="mixedResult"></p>
+    <h4>3. Запланированные будущие действия</h4>
+    <p class="note">Действия, которые уже точно запланированы на ближайшее будущее (обычно с указанием времени).</p>
+    <div class="examples">
+        <p>We're meeting friends tonight.<em> — Мы встречаемся с друзьями сегодня вечером.</em></p>
+        <p>What are you doing tomorrow?<em> — Что ты делаешь завтра?</em></p>
+        <p>She's flying to Paris next Monday.<em> — Она летит в Париж в следующий понедельник.</em></p>
+    </div>
+
+    <h4>4. Изменяющиеся ситуации и тренды</h4>
+    <p class="note">Ситуации, которые постепенно меняются, или современные тенденции.</p>
+    <div class="examples">
+        <p>The climate is getting warmer.<em> — Климат становится теплее.</em></p>
+        <p>More people are working from home these days.<em> — В наши дни всё больше людей работают из дома.</em></p>
+        <p>Your English is improving!<em> — Твой английский улучшается!</em></p>
+    </div>
+
+    <h4>5. Раздражающие привычки (с always, constantly)</h4>
+    <p class="note">Повторяющиеся действия, которые раздражают говорящего. Всегда с наречиями always, constantly, forever.</p>
+    <div class="examples">
+        <p>He's always interrupting me!<em> — Он постоянно меня перебивает!</em></p>
+        <p>You're constantly checking your phone.<em> — Ты вечно проверяешь свой телефон.</em></p>
+        <p>My neighbor is forever playing loud music.<em> — Мой сосед вечно включает громкую музыку.</em></p>
+    </div>
+
+    <h3>1. Утвердительные предложения</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Лицо</th>
+                <th>Формула</th>
+                <th>Пример</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Лицо">I</td>
+                <td data-label="Формула">am + V-ing</td>
+                <td data-label="Пример">I am reading.</td>
+            </tr>
+            <tr>
+                <td data-label="Лицо">He / She / It</td>
+                <td data-label="Формула">is + V-ing</td>
+                <td data-label="Пример">She is working.</td>
+            </tr>
+            <tr>
+                <td data-label="Лицо">You / We / They</td>
+                <td data-label="Формула">are + V-ing</td>
+                <td data-label="Пример">They are playing.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h4>Добавление -ing</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Окончание глагола</th>
+                <th>Что делаем</th>
+                <th>Пример</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Окончание">-e</td>
+                <td data-label="Что делаем">-e → -ing (убираем e)</td>
+                <td data-label="Пример">write → writing</td>
+            </tr>
+            <tr>
+                <td data-label="Окончание">согласная + гласная + согласная (односложные)</td>
+                <td data-label="Что делаем">удваиваем последнюю согласную + ing</td>
+                <td data-label="Пример">run → running</td>
+            </tr>
+            <tr>
+                <td data-label="Окончание">-ie</td>
+                <td data-label="Что делаем">-ie → -y + ing</td>
+                <td data-label="Пример">lie → lying</td>
+            </tr>
+            <tr>
+                <td data-label="Окончание">обычный глагол</td>
+                <td data-label="Что делаем">просто + ing</td>
+                <td data-label="Пример">watch → watching</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>2. Отрицательные предложения</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Лицо</th>
+                <th>Формула</th>
+                <th>Пример</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Лицо">I</td>
+                <td data-label="Формула">am not + V-ing</td>
+                <td data-label="Пример">I am not sleeping.</td>
+            </tr>
+            <tr>
+                <td data-label="Лицо">He / She / It</td>
+                <td data-label="Формула">is not + V-ing</td>
+                <td data-label="Пример">He is not working.</td>
+            </tr>
+            <tr>
+                <td data-label="Лицо">You / We / They</td>
+                <td data-label="Формула">are not + V-ing</td>
+                <td data-label="Пример">They are not studying.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="note">am not → I'm not, is not → isn't, are not → aren't</p>
+
+    <h3>3. Вопросы</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Тип</th>
+                <th>Формула</th>
+                <th>Пример</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Тип">Общий</td>
+                <td data-label="Формула">Am/Is/Are + subject + V-ing?</td>
+                <td data-label="Пример">Are you listening?</td>
+            </tr>
+            <tr>
+                <td data-label="Тип">Специальный</td>
+                <td data-label="Формула">What/Where/Why + am/is/are + subject + V-ing?</td>
+                <td data-label="Пример">What are you doing?</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="note">Специальные вопросы — это вопросы, которые начинаются с вопросительных слов. (What/Why/When/Where/Who и т.д.)</p>
+
+    <h3>Важные исключения (глаголы, которые НЕ используются в Continuous)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Категория</th>
+                <th>Глаголы</th>
+                <th>Пример</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Категория">Чувства и восприятие</td>
+                <td data-label="Глаголы">see, hear, smell, taste</td>
+                <td data-label="Пример">I see a bird. (НЕ: I'm seeing)</td>
+            </tr>
+            <tr>
+                <td data-label="Категория">Ментальные состояния</td>
+                <td data-label="Глаголы">know, understand, believe, remember</td>
+                <td data-label="Пример">I know him. (НЕ: I'm knowing)</td>
+            </tr>
+            <tr>
+                <td data-label="Категория">Эмоции и желания</td>
+                <td data-label="Глаголы">want, like, love, hate, need</td>
+                <td data-label="Пример">I want coffee. (НЕ: I'm wanting)</td>
+            </tr>
+            <tr>
+                <td data-label="Категория">Принадлежность</td>
+                <td data-label="Глаголы">have (в значении "владеть"), belong, own</td>
+                <td data-label="Пример">I have a car. (НЕ: I'm having)</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="note">Эти глаголы описывают состояния, а не действия, поэтому они обычно используются в Present Simple.</p>
+
+    <h3>Сравнение с Present Simple</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Present Continuous</th>
+                <th>Present Simple</th>
+                <th>Пример</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Continuous">Действие сейчас</td>
+                <td data-label="Simple">Привычка/факт</td>
+                <td data-label="Пример">I'm drinking tea (сейчас) / I drink tea every morning (привычка)</td>
+            </tr>
+            <tr>
+                <td data-label="Continuous">Временная ситуация</td>
+                <td data-label="Simple">Постоянная ситуация</td>
+                <td data-label="Пример">I'm living in Paris (временно) / I live in Paris (постоянно)</td>
+            </tr>
+            <tr>
+                <td data-label="Continuous">Запланированное будущее</td>
+                <td data-label="Simple">Расписание</td>
+                <td data-label="Пример">I'm meeting John tonight / The train leaves at 8 PM</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Слова-маркеры</h3>
+    <h4>Указатели момента речи:</h4>
+    <div class="examples">
+        <p>now — сейчас</p>
+        <p>right now — прямо сейчас</p>
+        <p>at the moment — в данный момент</p>
+        <p>at present — в настоящее время</p>
+        <p>currently — в настоящее время</p>
+    </div>
+    
+    <h4>Указатели временного периода:</h4>
+    <div class="examples">
+        <p>today — сегодня</p>
+        <p>this week/month/year — на этой неделе/в этом месяце/в этом году</p>
+        <p>these days — в эти дни, в наше время</p>
+        <p>for now — пока что, на данный момент</p>
+    </div>
+    
+    <h4>Указатели раздражающих привычек:</h4>
+    <div class="examples">
+        <p>always — всегда (в значении "вечно")</p>
+        <p>constantly — постоянно</p>
+        <p>forever — вечно</p>
+        <p>all the time — всё время</p>
+    </div>
+
+    <h3>Упражнения</h3>
+    
+    <button class="start-btn" onclick="toggleExercise('exercise1')">Упражнение 1 — выбери нужную форму</button>
+    <div id="exercise1" class="exercise">
+        
+<div class="task">
+    <p>1. Look! It ___ (rain) outside.</p>
+    <button onclick="check(this,true)">is raining</button>
+    <button onclick="check(this,false)">rains</button>
+    <button onclick="check(this,false)">rain</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>2. Shhh! The baby ___ (sleep).</p>
+    <button onclick="check(this,false)">sleep</button>
+    <button onclick="check(this,true)">is sleeping</button>
+    <button onclick="check(this,false)">sleeps</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>3. I ___ (study) for my exams this week.</p>
+    <button onclick="check(this,true)">am studying</button>
+    <button onclick="check(this,false)">study</button>
+    <button onclick="check(this,false)">studies</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>4. What ___ you ___ (do) tomorrow evening?</p>
+    <button onclick="check(this,true)">are / doing</button>
+    <button onclick="check(this,false)">do / do</button>
+    <button onclick="check(this,false)">are / do</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>5. They ___ (not work) today, it's Sunday.</p>
+    <button onclick="check(this,true)">are not working</button>
+    <button onclick="check(this,false)">do not work</button>
+    <button onclick="check(this,false)">not work</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>6. Why ___ she ___ (cry)?</p>
+    <button onclick="check(this,true)">is / crying</button>
+    <button onclick="check(this,false)">does / cry</button>
+    <button onclick="check(this,false)">is / cry</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>7. He ___ (always / interrupt) me when I speak!</p>
+    <button onclick="check(this,true)">is always interrupting</button>
+    <button onclick="check(this,false)">always interrupts</button>
+    <button onclick="check(this,false)">always interrupting</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>8. The world ___ (change) very fast these days.</p>
+    <button onclick="check(this,true)">is changing</button>
+    <button onclick="check(this,false)">changes</button>
+    <button onclick="check(this,false)">change</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>9. ___ you ___ (listen) to me?</p>
+    <button onclick="check(this,true)">Are / listening</button>
+    <button onclick="check(this,false)">Do / listen</button>
+    <button onclick="check(this,false)">Are / listen</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>10. We ___ (have) dinner right now, can I call you back?</p>
+    <button onclick="check(this,true)">are having</button>
+    <button onclick="check(this,false)">have</button>
+    <button onclick="check(this,false)">has</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>11. She ___ (learn) Spanish this year.</p>
+    <button onclick="check(this,true)">is learning</button>
+    <button onclick="check(this,false)">learns</button>
+    <button onclick="check(this,false)">learn</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>12. Where ___ they ___ (go) on vacation next month?</p>
+    <button onclick="check(this,true)">are / going</button>
+    <button onclick="check(this,false)">do / go</button>
+    <button onclick="check(this,false)">are / go</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>13. I ___ (not understand) this math problem.</p>
+    <button onclick="check(this,false)">am not understanding</button>
+    <button onclick="check(this,true)">do not understand</button>
+    <button onclick="check(this,false)">not understand</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>14. The sun ___ (rise) in the east.</p>
+    <button onclick="check(this,false)">is rising</button>
+    <button onclick="check(this,true)">rises</button>
+    <button onclick="check(this,false)">rise</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>15. You ___ (constantly / check) your phone!</p>
+    <button onclick="check(this,true)">are constantly checking</button>
+    <button onclick="check(this,false)">constantly check</button>
+    <button onclick="check(this,false)">constantly checking</button>
+    <p class="result"></p>
+</div>
+
+    </div>
+    
+    <button class="start-btn" onclick="toggleExercise('exercise2')">
+        Упражнение 2 — установите правильный порядок слов
+    </button>
+
+    <div id="exercise2" class="exercise">
+    
+<div class="task">
+    <p>1. Я читаю интересную книгу сейчас.</p>
+    <div class="words">
+        <button onclick="addWord(this)">I</button>
+        <button onclick="addWord(this)">am</button>
+        <button onclick="addWord(this)">book</button>
+        <button onclick="addWord(this)">reading</button>
+        <button onclick="addWord(this)">an</button>
+        <button onclick="addWord(this)">interesting</button>
+        <button onclick="addWord(this)">now</button>
+        <button onclick="addWord(this)">.</button>
+    </div>
+    <p class="sentence" data-answer="I am reading an interesting book now ."></p>
+    <button onclick="checkSentence(this)">Проверить</button>
+    <button onclick="clearOrder(this)">Стереть</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>2. Что ты делаешь в данный момент?</p>
+    <div class="words">
+        <button onclick="addWord(this)">doing</button>
+        <button onclick="addWord(this)">you</button>
+        <button onclick="addWord(this)">What</button>
+        <button onclick="addWord(this)">are</button>
+        <button onclick="addWord(this)">moment</button>
+        <button onclick="addWord(this)">at</button>
+        <button onclick="addWord(this)">the</button>
+        <button onclick="addWord(this)">?</button>
+    </div>
+    <p class="sentence" data-answer="What are you doing at the moment ?"></p>
+    <button onclick="checkSentence(this)">Проверить</button>
+    <button onclick="clearOrder(this)">Стереть</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>3. Он не работает сегодня.</p>
+    <div class="words">
+        <button onclick="addWord(this)">working</button>
+        <button onclick="addWord(this)">He</button>
+        <button onclick="addWord(this)">not</button>
+        <button onclick="addWord(this)">today</button>
+        <button onclick="addWord(this)">.</button>
+        <button onclick="addWord(this)">is</button>
+    </div>
+    <p class="sentence" data-answer="He is not working today ."></p>
+    <button onclick="checkSentence(this)">Проверить</button>
+    <button onclick="clearOrder(this)">Стереть</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>4. Мы встречаемся с друзьями сегодня вечером.</p>
+    <div class="words">
+        <button onclick="addWord(this)">friends</button>
+        <button onclick="addWord(this)">meeting</button>
+        <button onclick="addWord(this)">are</button>
+        <button onclick="addWord(this)">We</button>
+        <button onclick="addWord(this)">with</button>
+        <button onclick="addWord(this)">tonight</button>
+        <button onclick="addWord(this)">.</button>
+    </div>
+    <p class="sentence" data-answer="We are meeting friends tonight ."></p>
+    <button onclick="checkSentence(this)">Проверить</button>
+    <button onclick="clearOrder(this)">Стереть</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>5. Куда они едут в отпуск в следующем месяце?</p>
+    <div class="words">
+        <button onclick="addWord(this)">going</button>
+        <button onclick="addWord(this)">they</button>
+        <button onclick="addWord(this)">Where</button>
+        <button onclick="addWord(this)">on</button>
+        <button onclick="addWord(this)">are</button>
+        <button onclick="addWord(this)">vacation</button>
+        <button onclick="addWord(this)">month</button>
+        <button onclick="addWord(this)">next</button>
+        <button onclick="addWord(this)">?</button>
+    </div>
+    <p class="sentence" data-answer="Where are they going on vacation next month ?"></p>
+    <button onclick="checkSentence(this)">Проверить</button>
+    <button onclick="clearOrder(this)">Стереть</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>6. Погода становится теплее.</p>
+    <div class="words">
+        <button onclick="addWord(this)">warmer</button>
+        <button onclick="addWord(this)">getting</button>
+        <button onclick="addWord(this)">The</button>
+        <button onclick="addWord(this)">weather</button>
+        <button onclick="addWord(this)">is</button>
+        <button onclick="addWord(this)">.</button>
+    </div>
+    <p class="sentence" data-answer="The weather is getting warmer ."></p>
+    <button onclick="checkSentence(this)">Проверить</button>
+    <button onclick="clearOrder(this)">Стереть</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>7. Она постоянно опаздывает!</p>
+    <div class="words">
+        <button onclick="addWord(this)">late</button>
+        <button onclick="addWord(this)">always</button>
+        <button onclick="addWord(this)">She</button>
+        <button onclick="addWord(this)">is</button>
+        <button onclick="addWord(this)">!</button>
+        <button onclick="addWord(this)">arriving</button>
+    </div>
+    <p class="sentence" data-answer="She is always arriving late !"></p>
+    <button onclick="checkSentence(this)">Проверить</button>
+    <button onclick="clearOrder(this)">Стереть</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>8. Я живу с родителями в этом месяце.</p>
+    <div class="words">
+        <button onclick="addWord(this)">I</button>
+        <button onclick="addWord(this)">parents</button>
+        <button onclick="addWord(this)">am</button>
+        <button onclick="addWord(this)">living</button>
+        <button onclick="addWord(this)">month</button>
+        <button onclick="addWord(this)">my</button>
+        <button onclick="addWord(this)">with</button>
+        <button onclick="addWord(this)">this</button>
+        <button onclick="addWord(this)">.</button>
+    </div>
+    <p class="sentence" data-answer="I am living with my parents this month ."></p>
+    <button onclick="checkSentence(this)">Проверить</button>
+    <button onclick="clearOrder(this)">Стереть</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>9. Смотри! Идёт дождь.</p>
+    <div class="words">
+        <button onclick="addWord(this)">raining</button>
+        <button onclick="addWord(this)">is</button>
+        <button onclick="addWord(this)">It</button>
+        <button onclick="addWord(this)">Look</button>
+        <button onclick="addWord(this)">!</button>
+        <button onclick="addWord(this)">!</button>
+    </div>
+    <p class="sentence" data-answer="Look ! It is raining !"></p>
+    <button onclick="checkSentence(this)">Проверить</button>
+    <button onclick="clearOrder(this)">Стереть</button>
+    <p class="result"></p>
+</div>
+
+<div class="task">
+    <p>10. Ты улучшаешь свой английский!</p>
+    <div class="words">
+        <button onclick="addWord(this)">improving</button>
+        <button onclick="addWord(this)">English</button>
+        <button onclick="addWord(this)">are</button>
+        <button onclick="addWord(this)">Your</button>
+        <button onclick="addWord(this)">you</button>
+        <button onclick="addWord(this)">!</button>
+    </div>
+    <p class="sentence" data-answer="You are improving your English !"></p>
+    <button onclick="checkSentence(this)">Проверить</button>
+    <button onclick="clearOrder(this)">Стереть</button>
+    <p class="result"></p>
+</div>
+
+    </div>
+
+    <button class="start-btn" onclick="toggleExercise('exercise3')">
+        Упражнение 3 — впишите слово в правильной форме
+    </button>
+
+    <div id="exercise3" class="exercise">
+        
+<div class="task">
+    <p>1. She <input type="text" data-answer="is studying"> (study) for her exams right now.</p>
+</div>
+
+<div class="task">
+    <p>2. Look! The children <input type="text" data-answer="are playing"> (play) in the park.</p>
+</div>
+
+<div class="task">
+    <p>3. I <input type="text" data-answer="am not working"> (not work) today, I'm sick.</p>
+</div>
+
+<div class="task">
+    <p>4. What <input type="text" data-answer="are you doing"> (you/do) at the moment?</p>
+</div>
+
+<div class="task">
+    <p>5. He <input type="text" data-answer="is writing"> (write) an email to his boss now.</p>
+</div>
+
+<div class="task">
+    <p>6. We <input type="text" data-answer="are having"> (have) dinner with friends tonight.</p>
+</div>
+
+<div class="task">
+    <p>7. The sun <input type="text" data-answer="is shining"> (shine) brightly today.</p>
+</div>
+
+<div class="task">
+    <p>8. Why <input type="text" data-answer="is she crying"> (she/cry)?</p>
+</div>
+
+<div class="task">
+    <p>9. They <input type="text" data-answer="are not listening"> (not listen) to the teacher.</p>
+</div>
+
+<div class="task">
+    <p>10. My phone <input type="text" data-answer="is ringing"> (ring) right now.</p>
+</div>
+
+<div class="task">
+    <p>11. I <input type="text" data-answer="am learning"> (learn) to drive this month.</p>
+</div>
+
+<div class="task">
+    <p>12. He <input type="text" data-answer="is always forgetting"> (always/forget) his keys.</p>
+</div>
+
+<div class="task">
+    <p>13. Where <input type="text" data-answer="are they going"> (they/go) on holiday next week?</p>
+</div>
+
+<div class="task">
+    <p>14. The population <input type="text" data-answer="is growing"> (grow) rapidly these days.</p>
+</div>
+
+<div class="task">
+    <p>15. You <input type="text" data-answer="are doing"> (do) a great job!</p>
+</div>
+
+        <button onclick="checkInputs('exercise3')">Проверить</button>
+        <button onclick="clearInputs('exercise3')">Стереть</button>
     </div>
 </div>

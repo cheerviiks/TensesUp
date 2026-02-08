@@ -304,7 +304,6 @@ tbody tr:first-child {
 
 }
 
-/* ====== АДАПТАЦИЯ ПОД ТЕЛЕФОН ====== */
 @media (max-width: 600px) {
 
     body {
