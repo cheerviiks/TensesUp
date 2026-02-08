@@ -183,27 +183,41 @@ button:disabled {
 /* ====== ТАБЛИЦЫ ====== */
 table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 10px;
+    border-collapse: collapse; /* Меняем на collapse для слитных границ */
     margin-bottom: 20px;
+    border-radius: 12px 12px 0 0; /* Скругляем углы всей таблицы сверху */
+    overflow: hidden; /* Важно! Обрезаем всё, что выходит за скруглённые углы */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Необязательно: лёгкая тень для красоты */
 }
 
+/* Убираем скругления у ячеек заголовка */
 th {
     background: #cfe9ff;
-    padding: 12px;
+    padding: 16px 12px; /* Увеличиваем padding сверху/снизу для лучше визуально */
     text-align: left;
-    border-radius: 8px;
+    /* Убираем border-radius отсюда! */
+    border: none; /* Убираем границы между ячейками */
 }
 
+/* Убираем скругления и меняем фон у обычных ячеек */
 td {
     background: #ffffff;
     padding: 14px 12px;
     vertical-align: top;
-    border-radius: 8px;
+    /* Убираем border-radius отсюда! */
+    border: none; /* Убираем границы между ячейками */
 }
 
-tbody tr:nth-child(even) td {
-    background: #f3f8ff;
+
+
+/* Добавляем границы между строками (необязательно, но улучшает читаемость) */
+tbody tr {
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Первую границу можно сделать толще или другого цвета */
+tbody tr:first-child {
+    border-top: 2px solid #b8d9ff;
 }
 
 
@@ -327,30 +341,62 @@ tbody tr:nth-child(even) td {
     }
 }
 
-@media (max-width: 700px) {
-    table, thead, tbody, th, tr {
-        display: block;
+@media screen and (max-width: 767px) {
+    table {
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
     }
-
+    
+    /* Скрываем заголовок на мобильных */
     thead {
         display: none;
     }
-
-    tr {
-        margin-bottom: 15px;
+    
+    /* Превращаем строки в карточки */
+    tbody tr {
+        display: block;
+        margin-bottom: 12px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        border: 1px solid #e2e8f0;
     }
-
+    
+    /* Каждая ячейка становится строкой в карточке */
     td {
         display: flex;
         justify-content: space-between;
-        gap: 15px;
-        padding: 12px;
+        align-items: flex-start;
+        padding: 12px 16px;
+        border-top: 1px solid #f1f5f9;
+        text-align: right;
     }
-
+    
+    /* Убираем верхнюю границу у первой ячейки */
+    td:first-child {
+        border-top: none;
+    }
+    
+    /* Создаём псевдо-заголовки через data-label */
     td::before {
         content: attr(data-label);
-        font-weight: bold;
-        color: #1a73e8;
-        min-width: 110px;
+        font-weight: 600;
+        color: #4a5568;
+        text-align: left;
+        margin-right: 16px;
+        flex-shrink: 0;
+        min-width: 80px; /* Фиксированная ширина для меток */
+    }
+    
+    /* Для чётных строк на мобильных */
+    tbody tr:nth-child(even) {
+        background: #f8fafc;
+    }
+    
+    /* Убираем чередование фона у ячеек на мобильных */
+    tbody tr:nth-child(even) td,
+    tbody tr:nth-child(odd) td {
+        background: transparent;
     }
 }
